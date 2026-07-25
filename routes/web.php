@@ -15,20 +15,57 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+/*
+|--------------------------------------------------------------------------
+| Profile Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-	
-	Route::get('/student/dashboard', [StudentDashboardController::class, 'index'])
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Student Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth', 'role:Student'])->group(function () {
+
+    Route::get('/student/dashboard', [StudentDashboardController::class, 'index'])
         ->name('student.dashboard');
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Faculty Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth', 'role:Faculty'])->group(function () {
 
     Route::get('/faculty/dashboard', [FacultyDashboardController::class, 'index'])
         ->name('faculty.dashboard');
 
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth', 'role:Admin'])->group(function () {
+
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
         ->name('admin.dashboard');
-		
+
 });
 
 require __DIR__.'/auth.php';
