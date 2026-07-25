@@ -1,36 +1,65 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATEIMS</title>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    @vite(['resources/css/app.css','resources/js/app.js'])
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<body>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+<header style="background:#1E3A8A;color:white;padding:15px;">
+    <h2>Academic & Technical Educational Institution Management System</h2>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+    <p>
+        Welcome,
+        {{ auth()->user()->name }}
+    </p>
+</header>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+<div style="display:flex;min-height:90vh;">
+
+    <!-- Sidebar -->
+    <aside style="width:250px;background:#0F172A;color:white;padding:20px;">
+
+        <h3>Navigation</h3>
+
+        <hr>
+
+        <p><a href="#" style="color:white;">Dashboard</a></p>
+
+        <p><a href="#" style="color:white;">Departments</a></p>
+
+        <p><a href="#" style="color:white;">Courses</a></p>
+
+        <p><a href="#" style="color:white;">Subjects</a></p>
+
+        <p><a href="#" style="color:white;">Faculty</a></p>
+
+        <p><a href="#" style="color:white;">Students</a></p>
+
+        <p><a href="#" style="color:white;">Attendance</a></p>
+
+        <p><a href="#" style="color:white;">Examination</a></p>
+
+        <p><a href="#" style="color:white;">Library</a></p>
+
+        <p><a href="#" style="color:white;">Fees</a></p>
+
+        <p><a href="#" style="color:white;">Settings</a></p>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main style="flex:1;padding:30px;">
+
+        @yield('content')
+
+    </main>
+
+</div>
+
+</body>
 </html>
