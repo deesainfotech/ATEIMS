@@ -10,6 +10,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+					
+					<h2>Welcome, {{ auth()->user()->name }}</h2>
+
+					<p>
+							Your Role:
+					<strong>{{ auth()->user()->role->name }}</strong>
+					</p>
                 </div>
             </div>
         </div>
