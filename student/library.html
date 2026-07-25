@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Student Library</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+<div class="row">
+
+<!-- Sidebar -->
+
+<div class="col-lg-2 bg-dark text-white min-vh-100">
+
+<h4 class="text-center mt-4">
+
+Student Portal
+
+</h4>
+
+<ul class="nav flex-column mt-4">
+
+<li><a href="dashboard.html" class="nav-link text-white">Dashboard</a></li>
+
+<li><a href="profile.html" class="nav-link text-white">Profile</a></li>
+
+<li><a href="attendance.html" class="nav-link text-white">Attendance</a></li>
+
+<li><a href="results.html" class="nav-link text-white">Results</a></li>
+
+<li><a href="fees.html" class="nav-link text-white">Fees</a></li>
+
+<li><a href="library.html" class="nav-link active text-warning">Library</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-10 p-4">
+
+<h2>
+
+Library Management
+
+</h2>
+
+<div class="row mt-4">
+
+<div class="col-md-3">
+
+<div class="card bg-primary text-white">
+
+<div class="card-body">
+
+<h5>Books Issued</h5>
+
+<h2>3</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-success text-white">
+
+<div class="card-body">
+
+<h5>Books Returned</h5>
+
+<h2>28</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-warning">
+
+<div class="card-body">
+
+<h5>Pending Return</h5>
+
+<h2>1</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card bg-danger text-white">
+
+<div class="card-body">
+
+<h5>Fine</h5>
+
+<h2>₹50</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card mt-4">
+
+<div class="card-header bg-primary text-white">
+
+Currently Issued Books
+
+</div>
+
+<div class="card-body">
+
+<table class="table table-hover">
+
+<thead>
+
+<tr>
+
+<th>Book ID</th>
+
+<th>Book Name</th>
+
+<th>Issue Date</th>
+
+<th>Due Date</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>BK101</td>
+
+<td>Operating System</td>
+
+<td>10 Aug 2026</td>
+
+<td>10 Sept 2026</td>
+
+<td>
+
+<span class="badge bg-success">
+
+Issued
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>BK205</td>
+
+<td>Database Management</td>
+
+<td>15 Aug 2026</td>
+
+<td>15 Sept 2026</td>
+
+<td>
+
+<span class="badge bg-success">
+
+Issued
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>BK301</td>
+
+<td>Computer Networks</td>
+
+<td>20 Aug 2026</td>
+
+<td>20 Sept 2026</td>
+
+<td>
+
+<span class="badge bg-warning">
+
+Renew Soon
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card mt-4">
+
+<div class="card-header bg-success text-white">
+
+Search Library
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-10">
+
+<input type="text"
+
+class="form-control"
+
+placeholder="Search Book, Author or ISBN">
+
+</div>
+
+<div class="col-md-2">
+
+<button class="btn btn-success w-100">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card mt-4">
+
+<div class="card-header bg-info text-white">
+
+Available Books
+
+</div>
+
+<div class="card-body">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Book</th>
+
+<th>Author</th>
+
+<th>Category</th>
+
+<th>Availability</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Python Programming</td>
+
+<td>Mark Lutz</td>
+
+<td>Programming</td>
+
+<td class="text-success">
+
+Available
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Machine Learning</td>
+
+<td>Tom Mitchell</td>
+
+<td>AI</td>
+
+<td class="text-success">
+
+Available
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Cloud Computing</td>
+
+<td>Rajkumar Buyya</td>
+
+<td>Cloud</td>
+
+<td class="text-danger">
+
+Issued
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card mt-4">
+
+<div class="card-header bg-warning">
+
+Borrow History
+
+</div>
+
+<div class="card-body">
+
+<table class="table">
+
+<tr>
+
+<th>Book</th>
+
+<th>Issue</th>
+
+<th>Return</th>
+
+</tr>
+
+<tr>
+
+<td>Java Programming</td>
+
+<td>10 Jan</td>
+
+<td>05 Feb</td>
+
+</tr>
+
+<tr>
+
+<td>Compiler Design</td>
+
+<td>20 Feb</td>
+
+<td>15 Mar</td>
+
+</tr>
+
+<tr>
+
+<td>Operating System</td>
+
+<td>10 Aug</td>
+
+<td>Pending</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<button class="btn btn-primary">
+
+Renew Selected Book
+
+</button>
+
+<button class="btn btn-danger">
+
+Pay Fine
+
+</button>
+
+<button class="btn btn-success">
+
+Download Receipt
+
+</button>
+
+</div>
+
+<div class="card mt-4">
+
+<div class="card-header bg-dark text-white">
+
+Digital Library
+
+</div>
+
+<div class="card-body">
+
+<ul>
+
+<li>NPTEL Resources</li>
+
+<li>IEEE Digital Library</li>
+
+<li>Springer eBooks</li>
+
+<li>National Digital Library</li>
+
+<li>Open Educational Resources</li>
+
+</ul>
+
+</div>
+
+</div>
+
