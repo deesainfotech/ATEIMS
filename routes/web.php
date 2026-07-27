@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Student\StudentDashboardController;
 use App\Http\Controllers\Faculty\FacultyDashboardController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\InstitutionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,6 +66,18 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
 
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
         ->name('admin.dashboard');
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Institution Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('institutions', InstitutionController::class);
 
 });
 
