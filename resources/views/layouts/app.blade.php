@@ -3,61 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATEIMS</title>
+    <title>@yield('title', 'ATEIMS')</title>
 
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-<header style="background:#1E3A8A;color:white;padding:15px;">
-    <h2>Academic & Technical Educational Institution Management System</h2>
-
-    <p>
-        Welcome,
-        {{ auth()->user()->name }}
-    </p>
-</header>
-
-<div style="display:flex;min-height:90vh;">
+<div class="flex min-h-screen">
 
     <!-- Sidebar -->
-    <aside style="width:250px;background:#0F172A;color:white;padding:20px;">
+    <aside class="w-64 bg-blue-900 text-white">
 
-        <h3>Navigation</h3>
+        <div class="p-5 text-2xl font-bold border-b border-blue-700">
+            ATEIMS
+        </div>
 
-        <hr>
+        <nav class="mt-5">
 
-        <p><a href="#" style="color:white;">Dashboard</a></p>
+            <a href="{{ route('dashboard') }}"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Dashboard
+            </a>
 
-        <p><a href="#" style="color:white;">Departments</a></p>
+            <a href="{{ route('institutions.index') }}"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Institution
+            </a>
 
-        <p><a href="#" style="color:white;">Courses</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Departments
+            </a>
 
-        <p><a href="#" style="color:white;">Subjects</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Courses
+            </a>
 
-        <p><a href="#" style="color:white;">Faculty</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Students
+            </a>
 
-        <p><a href="#" style="color:white;">Students</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Faculty
+            </a>
 
-        <p><a href="#" style="color:white;">Attendance</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Attendance
+            </a>
 
-        <p><a href="#" style="color:white;">Examination</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Examination
+            </a>
 
-        <p><a href="#" style="color:white;">Library</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Library
+            </a>
 
-        <p><a href="#" style="color:white;">Fees</a></p>
+            <a href="#"
+               class="block px-5 py-3 hover:bg-blue-700">
+                Fees
+            </a>
 
-        <p><a href="#" style="color:white;">Settings</a></p>
+        </nav>
 
     </aside>
 
-    <!-- Main Content -->
-    <main style="flex:1;padding:30px;">
+    <!-- Main Area -->
+    <div class="flex-1">
 
-        @yield('content')
+        <!-- Header -->
+        <header class="bg-white shadow p-5 flex justify-between">
 
-    </main>
+            <h1 class="text-2xl font-bold">
+                @yield('page-title')
+            </h1>
+
+            <div>
+
+                {{ Auth::user()->name }}
+
+            </div>
+
+        </header>
+
+        <!-- Flash Message -->
+        <div class="p-5">
+
+            @if(session('success'))
+
+                <div class="bg-green-200 text-green-900 p-3 rounded mb-4">
+
+                    {{ session('success') }}
+
+                </div>
+
+            @endif
+
+            @yield('content')
+
+        </div>
+
+    </div>
 
 </div>
 
