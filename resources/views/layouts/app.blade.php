@@ -31,10 +31,10 @@
                 Institution
             </a>
 
-            <a href="#"
-               class="block px-5 py-3 hover:bg-blue-700">
-                Departments
-            </a>
+            <a href="{{ route('departments.index') }}"
+			class="block px-5 py-3 hover:bg-blue-700">
+			Departments
+			</a>
 
             <a href="#"
                class="block px-5 py-3 hover:bg-blue-700">
