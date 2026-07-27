@@ -7,6 +7,7 @@ use App\Http\Controllers\Student\StudentDashboardController;
 use App\Http\Controllers\Faculty\FacultyDashboardController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\InstitutionController;
+use App\Http\Controllers\Academic\DepartmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -78,6 +79,18 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
 Route::middleware(['auth'])->group(function () {
 
     Route::resource('institutions', InstitutionController::class);
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Department Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth'])->group(function () {
+	
+    Route::resource('departments', DepartmentController::class);
 
 });
 
